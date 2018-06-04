@@ -1,0 +1,128 @@
+@import "compass";
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #bea300;
+$keyColor: #14c0c9;
+$fontColor: #4c4c4c;
+
+/* Base
+------------------------------------------------------------*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $fontColor;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    background-color: $baseColor;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header
+------------------------------------------------------------*/
+header {
+    .top-img {
+        background-image: url("../images/img_work_blog.jpg");
+        height: 250px;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+    h1 {
+        font-size: 4.2rem;
+    }
+    
+    h2 {
+        font-size: 3.2rem;
+    }
+    
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+// Part1
+#part1 {
+    .text-box {
+        padding: 10px;
+    }
+    
+    .container {
+        @include display-flex;
+        justify-content: space-bteween;
+        @include flex-direction(column);    // ボックスを縦に並べる
+        margin: 10px 0 30px 0;
+    }
+    
+    .box {
+        @include flex(1);
+        margin: 10px 0;                     // 上下にマージン
+        padding: 0 20px 5px 20px;
+        .title-box {
+            background-color: $keyColor;
+            color: #FFF;
+        }
+        .text-box {
+            background-color: $subColor;
+            color: #FFF;
+        }
+    }
+}
+
+// Part2
+#part2 {
+    .inner-box {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        color: #FFF;
+        .button {
+            margin: auto;
+            padding: 5px 0;
+            width: 180px;
+            display: block;
+            color: #FFF;
+            background-color: $keyColor;
+            @include border-radius(4px);
+            font-size: 1rem;
+        }
+    }
+}
+
+
+// desktop
+@media (min-width: 769px) {
+    /* Header
+    ------------------------------------------------------------*/
+    header {
+        .top-img {
+            height: 500px;
+        }
+    }
+    
+    /* Contents
+    ------------------------------------------------------------*/
+    // Part1
+    #part1 {
+        .container {
+            @include flex-direction(row);    // スキルボックスを横に並べる
+            justify-content: space-between;
+        }
+        .box {
+            margin: 0 10px;
+            padding: 0;
+        }
+    }
+}
